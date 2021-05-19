@@ -43,15 +43,14 @@ class FirstPage extends StatelessWidget {
                     SizedBox(width:120),
                     
                     Container(
-                      margin: EdgeInsets.fromLTRB(0,0,0,0),
-                      decoration: BoxDecoration(
-                        border: Border.all(color: Colors.orange,width:1.4),
-                        borderRadius:BorderRadius.circular(20),
-                        color: Colors.white,
+                        margin: EdgeInsets.fromLTRB(0,0,0,0),
+                        decoration: BoxDecoration(
+                          border: Border.all(color: Colors.orange,width:1.4),
+                          borderRadius:BorderRadius.circular(20),
+                          color: Colors.white,
+                        ),
+                          child: Icon(Icons.add,size: 20,color:Colors.orange,),
                       ),
-                        child: Row(children:
-                         [ Icon(Icons.add,size: 20,color:Colors.orange,)],),
-                    ),
                     SizedBox(width:10),
                     
                   Container(
@@ -161,10 +160,11 @@ class FirstPage extends StatelessWidget {
                           {
                             Navigator.push(context, MaterialPageRoute(builder: (context) => NextPage(),),);
                           },
-                          constraints: BoxConstraints(maxHeight:30),
+                          constraints: BoxConstraints(minWidth: 65,minHeight: 50),
                           child: Text('Details',style:TextStyle(
                           fontWeight: FontWeight.bold,fontSize: 13,color: Colors.orange)
                             ),
+                          shape:CircleBorder(),
                         ),
                         Icon(Icons.arrow_forward,color: Colors.green[400],size: 13),
                       ],
@@ -175,14 +175,19 @@ class FirstPage extends StatelessWidget {
               
               Expanded(
                 child: Container(
-                  margin: EdgeInsets.fromLTRB(25,0,25,0),
+                  margin: EdgeInsets.fromLTRB(25,0,15,0),
                   child: Row(
                     children: [
                       Row(children: [
                         Text("Files",style:TextStyle(fontSize:20,fontWeight: FontWeight.bold),),
                         SizedBox(width:200),
-                        Text("See all",style:TextStyle(color:Colors.orange,fontSize:12,fontWeight: FontWeight.bold),),
-                        SizedBox(width:13),
+                        RawMaterialButton(
+                          constraints: BoxConstraints(minHeight: 35,minWidth: 50),
+                            onPressed:(){},
+                          child: Text("See all",style:TextStyle(color:Colors.orange,fontSize:12,fontWeight: FontWeight.bold),),
+                          shape:CircleBorder(),
+                        ),
+                        SizedBox(width:10),
                         Icon(Icons.arrow_forward,color:Colors.green[400],size:13)
                       ],)
                     ],
@@ -307,37 +312,41 @@ class FirstPage extends StatelessWidget {
                  (mainAxisAlignment: MainAxisAlignment.spaceAround,
                    children: [
                   RawMaterialButton( onPressed:(){},
-                  constraints: BoxConstraints(maxHeight:30),
+                  constraints: BoxConstraints(),
                     child: Container(
                       padding: EdgeInsets.fromLTRB(5,5,5,5),
                       decoration:BoxDecoration(borderRadius: BorderRadius.circular(30),color: Colors.orange),
                       child: Icon(Icons.add,color:Colors.white,size: 15,)
-                    )
+                    ),shape:CircleBorder(),
                   ),
 
                   RawMaterialButton(onPressed:(){},
-                    constraints:BoxConstraints(maxHeight:30),
-                    child: Icon(Icons.calendar_today_rounded,color: Colors.grey)
+                    constraints:BoxConstraints(),
+                    child: Icon(Icons.calendar_today_rounded,color: Colors.grey),
+                    shape:CircleBorder(),
                   ),
 
                   RawMaterialButton(onPressed:(){},
-                  constraints: BoxConstraints(maxHeight:60),
+                  constraints: BoxConstraints(),
                     child: Container(
                       margin: EdgeInsets.fromLTRB(0,0,0,7),
                       padding: EdgeInsets.fromLTRB(0,0,0,8),
                       decoration: BoxDecoration(
                         border:Border(bottom:BorderSide( width: 2.0,color: Colors.orange))
-                      ),child: Icon(Icons.home,color: Colors.orange,size: 20,))
+                      ),child: Icon(Icons.home,color: Colors.orange,size: 20,)),
+                      shape:CircleBorder(),
                   ),
 
                   RawMaterialButton(onPressed:(){},
-                  constraints: BoxConstraints(maxHeight:30),
+                  constraints: BoxConstraints(),
                     child: Icon(Icons.pie_chart_sharp,color: Colors.grey),
+                    shape:CircleBorder(),
                   ),
 
                   RawMaterialButton(onPressed:(){},
-                  constraints: BoxConstraints(maxHeight:30),
+                  constraints: BoxConstraints(),
                     child: Icon(Icons.hourglass_empty_outlined,color: Colors.blue),
+                    shape:CircleBorder(),
                   ),
 
                 ],),

@@ -41,6 +41,10 @@ class NextPage extends StatelessWidget {
             constraints: BoxConstraints(),
             onPressed: (){},
               child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(20)),
+                border:Border.all(color:Colors.grey[700])
+                ),
                 padding: EdgeInsets.fromLTRB(5,5,5,5),          
                 child: Icon(Icons.delete_outline_rounded,size:20)
               ),
